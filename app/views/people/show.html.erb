@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @person.avatar %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @person.degree %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @person.short_description %>
+</p>
+
+<p>
+  <strong>Full description:</strong>
+  <%= @person.full_description %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @person.skill %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
