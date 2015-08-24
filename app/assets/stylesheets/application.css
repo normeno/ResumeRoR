@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require shared/bootstrap.min
+ *= require backend/AdminLTE.min
+ *= require backend/skin-green-light.min
  */

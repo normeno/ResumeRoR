@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require shared/bootstrap.min
+//= require backend/plugins/slimScroll/jquery.slimscroll.min
+//= require backend/plugins/fastclick/fastclick.min
+//= require backend/app.min
+//= require turbolinks

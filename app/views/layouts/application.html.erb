@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>Resume</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <%= stylesheet_link_tag    'application', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' %>
+  <%= stylesheet_link_tag    'application', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="hold-transition skin-green-light sidebar-mini">
+  <div class="wrapper">
+    <%= render "layouts/backend/header" %>
+    <%= render "layouts/backend/sidebar" %>
 
+    <div class="content-wrapper">
+      <section class="content-header">
+        <h1>
+          Simple Tables
+          <small>preview of simple tables</small>
+        </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tables</a></li>
+        <li class="active">Simple</li>
+      </ol>
+      </section>
+    </div>
+  </div>
 <%= yield %>
-
 </body>
 </html>
