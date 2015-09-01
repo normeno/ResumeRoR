@@ -15,19 +15,33 @@
     <%= render "layouts/backend/sidebar" %>
 
     <div class="content-wrapper">
+
       <section class="content-header">
+        <% locale_path = controller_name+"."+action_name %>
         <h1>
-          Simple Tables
-          <small>preview of simple tables</small>
+          <%= t locale_path+'.title' %>
+          <small><%= t locale_path+'.subtitle' %></small>
         </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
+        <ol class="breadcrumb">
+          <li>
+            <%= t 'home' %>
+          </li>
+          <li><%= link_to params[:controller].capitalize, '#' %></li>
+        </ol>
       </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
+
   </div>
-<%= yield %>
 </body>
 </html>

@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# Trabajo con imágenes
+gem 'carrierwave'
+gem 'mini_magick'
+
+# wysihtml5
+gem 'bootstrap-wysihtml5-rails'
+
 # jQuery-turbolinks
 gem 'jquery-turbolinks'
 

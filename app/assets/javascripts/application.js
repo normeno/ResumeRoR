@@ -18,4 +18,6 @@
 //= require backend/plugins/slimScroll/jquery.slimscroll.min
 //= require backend/plugins/fastclick/fastclick.min
 //= require backend/app.min
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
 //= require turbolinks

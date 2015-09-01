@@ -1,37 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+  <%= link_to t('.add') , new_job_path, class: 'btn btn-default' %>
+</div>
 
-<h1>Listing Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Company name</th>
-      <th>Position</th>
-      <th>Description</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Person</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
+<div class="box-body">
+  <p id="notice"><%= notice %></p>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= job.company_name %></td>
-        <td><%= job.position %></td>
-        <td><%= job.description %></td>
-        <td><%= job.start %></td>
-        <td><%= job.end %></td>
-        <td><%= job.person_id %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= t 'jobs.company_name' %></th>
+        <th><%= t 'jobs.position' %></th>
+        <th><%= t 'jobs.description' %></th>
+        <th><%= t 'jobs.start' %></th>
+        <th><%= t 'jobs.end' %></th>
+        <th><%= t 'jobs.person' %></th>
+        <th colspan="3"><%= t 'actions' %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Job', new_job_path %>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.company_name %></td>
+          <td><%= job.position %></td>
+          <td><%= job.description %></td>
+          <td><%= job.start %></td>
+          <td><%= job.end %></td>
+          <td><%= job.person_id %></td>
+          <td><%= link_to t('show'), job %></td>
+          <td><%= link_to t('edit'), edit_job_path(job) %></td>
+          <td><%= link_to t('destroy'), job, method: :delete, data: { confirm: t('are_you_sure') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

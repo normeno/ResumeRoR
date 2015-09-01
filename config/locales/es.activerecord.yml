@@ -1,0 +1,18 @@
+es:
+  activerecord:
+    models:
+      course: 'Curso'
+      education: 'Educación'
+      job: 'Trabajo'
+      person: 'Persona'
+      recommendation: 'Recomendación'
+    attributes:
+      person:
+        name: 'Nombre'
+        avatar: 'Avatar'
+        email: 'Email'
+        degree: 'Título'
+        short_description: 'Desc. Corta'
+        full_description: 'Desc. Completa'
+        skill: 'Skill'
+        resume_link: 'Link de resumen'

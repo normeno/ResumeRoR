@@ -1,39 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+  <%= link_to t('edit'), edit_person_path(@person), class: 'btn btn-default' %>
+  <%= link_to t('back'), people_path, class: 'btn btn-default' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
+<div class="box-body">
+  <% if(notice) %>
+    <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
+  <% end %>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @person.avatar %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @person.email %>
-</p>
-
-<p>
-  <strong>Degree:</strong>
-  <%= @person.degree %>
-</p>
-
-<p>
-  <strong>Short description:</strong>
-  <%= @person.short_description %>
-</p>
-
-<p>
-  <strong>Full description:</strong>
-  <%= @person.full_description %>
-</p>
-
-<p>
-  <strong>Skill:</strong>
-  <%= @person.skill %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+  <table class="table table-bordered">
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.name' %></td>
+      <td><%= @person.name %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.avatar' %></td>
+      <td><%= image_tag @person.avatar.url %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.email' %></td>
+      <td><%= @person.email %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.degree' %></td>
+      <td><%= @person.degree %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.short_description' %></td>
+      <td><%= @person.short_description %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.full_description' %></td>
+      <td><%= @person.full_description %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'people.skill' %></td>
+      <td><%= @person.skill %></td>
+    </tr>
+  </table>
+</div>

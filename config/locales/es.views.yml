@@ -1,9 +1,66 @@
 es:
   main_navigation: 'Menú de Navegación'
   online: 'En línea'
-  people: 'Personas'
-  education: 'Estudios'
-  jobs: 'Trabajos'
-  recommendations: 'Recomendaciones'
-  profile: 'Perfil'
+  people_name: 'Personas'
+  person_name: 'Persona'
+  educations_name: 'Estudios'
+  education_name: 'Estudio'
+  jobs_name: 'Trabajos'
+  job_name: 'Trabajo'
+  recommendations_name: 'Recomendaciones'
+  recommendation_name: 'Recomendación'
+  profiles_name: 'Perfiles'
+  profil_name: 'Perfil'
+  courses_name: 'Cursos'
+  course_name: 'Curso'
   sign_out: 'Salir'
+  admin: 'Administración'
+  home: 'Inicio'
+  actions: 'Acciones'
+  show: 'Mostrar'
+  edit: 'Editar'
+  destroy: 'Eliminar'
+  are_you_sure: '¿Estás Seguro?'
+  back: 'Atrás'
+
+  courses:
+    index:
+      admin_to: 'Administración de Cursos'
+      add: 'Nuevo Curso'
+
+  people:
+    name: 'Nombre'
+    avatar: 'Avatar'
+    email: 'Email'
+    degree: 'Título'
+    short_description: 'Desc. Corta'
+    full_description: 'Desc. Larga'
+    skill: 'Skills'
+    resume_link: 'Link Resumen'
+    index:
+      title: 'Nuevo Trabajo'
+      subtitle: ''
+      admin_to: 'Administración de Personas'
+      add: 'Nueva Persona'
+    new:
+      title: 'Nueva Persona'
+      subtitle: 'Crear nueva persona en la plataforma'
+    edit:
+      title: 'Editar Persona'
+      subtitle: ''
+
+  jobs:
+    company_name: 'Empresa'
+    position: 'Cargo'
+    description: 'Descripción'
+    start: 'Inicio'
+    end: 'Fin'
+    person: 'Persona'
+
+    index:
+      admin_to: 'Administración de Cursos'
+      add: 'Nuevo Trabajo'
+
+    new:
+      title: 'Nuevo Trabajo'
+      subtitle: ''

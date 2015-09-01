@@ -1,4 +1,4 @@
-<%= form_for(@person) do |f| %>
+<%= form_for(@person, builder: BootstrapFormBuilder) do |f| %>
   <% if @person.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
@@ -11,35 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.text_area :avatar %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :degree %><br>
-    <%= f.text_field :degree %>
-  </div>
-  <div class="field">
-    <%= f.label :short_description %><br>
-    <%= f.text_area :short_description %>
-  </div>
-  <div class="field">
-    <%= f.label :full_description %><br>
-    <%= f.text_area :full_description %>
-  </div>
-  <div class="field">
-    <%= f.label :skill %><br>
-    <%= f.text_area :skill %>
-  </div>
+  <%= label(:name, t('people.name') ) %>
+  <%= f.bootstrap_text_field :name %>
+
+  <%= f.label :avatar %><br>
+  <%= f.bootstrap_file_field :avatar %>
+
+  <%= label(:name, t('people.email') ) %>
+  <%= f.bootstrap_text_field :email %>
+
+  <%= label(:degree, t('people.degree') ) %>
+  <%= f.bootstrap_text_field :degree %>
+
+  <%= label(:short_description, t('people.short_description') ) %>
+  <%= f.bootstrap_text_field :short_description %>
+
+  <%= f.label :full_description %><br>
+  <%= f.bootstrap_text_area :full_description %>
+
+  <%= label(:skill, t('people.skill') ) %>
+  <%= f.bootstrap_text_field :skill %>
+
+  <%= label(:resume_link, t('people.resume_link') ) %>
+  <%= f.bootstrap_url_field :resume_link %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-default' %>
+    <%= link_to 'Atrás', people_path, class: 'btn btn-default' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#person_full_description').wysihtml5();
+</script>

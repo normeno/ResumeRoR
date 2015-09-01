@@ -15,4 +15,14 @@
  *= require shared/bootstrap.min
  *= require backend/AdminLTE.min
  *= require backend/skin-green-light.min
+ *= require bootstrap-wysihtml5
  */
+
+.td_show_attribute {
+  font-weight: bold;
+  width: 300px;
+}
+
+.field_with_errors {
+  display: block;
+}
