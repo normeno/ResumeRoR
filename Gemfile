@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Datepicker
+gem 'bootstrap-datepicker-rails'
+
 # Trabajo con imágenes
 gem 'carrierwave'
 gem 'mini_magick'

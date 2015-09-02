@@ -38,15 +38,37 @@ es:
     skill: 'Skills'
     resume_link: 'Link Resumen'
     index:
-      title: 'Nuevo Trabajo'
-      subtitle: ''
-      admin_to: 'Administración de Personas'
+      title: 'Personas'
+      subtitle: 'Administración de Personas'
       add: 'Nueva Persona'
     new:
       title: 'Nueva Persona'
       subtitle: 'Crear nueva persona en la plataforma'
     edit:
       title: 'Editar Persona'
+      subtitle: ''
+    show:
+      title: ''
+      subtitle: ''
+
+  educations:
+    entity_name: 'Nombre de Entidad'
+    career: 'Carrera'
+    start: 'Inicio'
+    end: 'Término'
+    person: 'Persona'
+    index:
+      title: 'Cursos'
+      subtitle: 'Administración de Estudios'
+      add: 'Agregar Estudio'
+    new:
+      title: 'Nuevo Estudio'
+      subtitle: 'Agregar estudio a persona'
+    edit:
+      title: 'Editar Curso'
+      subtitle: ''
+    show:
+      title: ''
       subtitle: ''
 
   jobs:

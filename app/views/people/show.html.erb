@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td class="td_show_attribute"><%= t 'people.avatar' %></td>
-      <td><%= image_tag @person.avatar.url %></td>
+      <td><%= image_tag @person.avatar.url(:medium) %></td>
     </tr>
     <tr>
       <td class="td_show_attribute"><%= t 'people.email' %></td>
@@ -27,11 +27,11 @@
     </tr>
     <tr>
       <td class="td_show_attribute"><%= t 'people.short_description' %></td>
-      <td><%= @person.short_description %></td>
+      <td><%= @person.short_description.html_safe %></td>
     </tr>
     <tr>
       <td class="td_show_attribute"><%= t 'people.full_description' %></td>
-      <td><%= @person.full_description %></td>
+      <td><%= @person.full_description.html_safe %></td>
     </tr>
     <tr>
       <td class="td_show_attribute"><%= t 'people.skill' %></td>

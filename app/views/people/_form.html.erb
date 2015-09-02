@@ -24,7 +24,7 @@
   <%= f.bootstrap_text_field :degree %>
 
   <%= label(:short_description, t('people.short_description') ) %>
-  <%= f.bootstrap_text_field :short_description %>
+  <%= f.bootstrap_text_area :short_description %>
 
   <%= f.label :full_description %><br>
   <%= f.bootstrap_text_area :full_description %>
@@ -42,5 +42,6 @@
 <% end %>
 
 <script type="text/javascript">
+  $('#person_short_description').wysihtml5();
   $('#person_full_description').wysihtml5();
 </script>

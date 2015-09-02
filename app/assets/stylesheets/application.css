@@ -16,6 +16,7 @@
  *= require backend/AdminLTE.min
  *= require backend/skin-green-light.min
  *= require bootstrap-wysihtml5
+ *= require bootstrap-datepicker3
  */
 
 .td_show_attribute {

@@ -20,4 +20,6 @@
 //= require backend/app.min
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
 //= require turbolinks

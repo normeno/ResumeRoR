@@ -1,35 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+  <%= link_to t('.add') , new_education_path, class: 'btn btn-default' %>
+</div>
 
-<h1>Listing Educations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Entity name</th>
-      <th>Career</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Person</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @educations.each do |education| %>
+<div class="box-body">
+  <p id="notice"><%= notice %></p>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= education.entity_name %></td>
-        <td><%= education.career %></td>
-        <td><%= education.start %></td>
-        <td><%= education.end %></td>
-        <td><%= education.person_id %></td>
-        <td><%= link_to 'Show', education %></td>
-        <td><%= link_to 'Edit', edit_education_path(education) %></td>
-        <td><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= t 'people.entity_name' %></th>
+        <th><%= t 'people.career' %></th>
+        <th><%= t 'people.start' %></th>
+        <th><%= t 'people.end' %></th>
+        <th><%= t 'people.person' %></th>
+        <th colspan="3" align="center"><%= t 'actions' %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Education', new_education_path %>
+    </thead>
+    <tbody>
+      <% @educations.each do |education| %>
+        <tr>
+          <td><%= education.entity_name %></td>
+          <td><%= education.career %></td>
+          <td><%= education.start %></td>
+          <td><%= education.end %></td>
+          <td><%= education.person_id %></td>
+          <td><%= link_to t('show'), education %></td>
+          <td><%= link_to t('edit'), edit_education_path(education) %></td>
+          <td><%= link_to t('destroy'), education, method: :delete, data: { confirm: t('are_you_sure') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
