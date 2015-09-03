@@ -41,4 +41,11 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
       :class => 'form-group'
     )
   end
+  def bootstrap_date_picker_empty(method, options = {})
+    @template.content_tag(
+      :div,
+      date_field(method, options.merge(class: 'form-control datepicker', 'data-provide': 'datepicker')),
+      :class => 'form-group'
+    )
+  end
 end
