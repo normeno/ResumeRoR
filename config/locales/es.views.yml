@@ -86,3 +86,21 @@ es:
     new:
       title: 'Nuevo Trabajo'
       subtitle: ''
+
+  recommendations:
+    name: 'Nombre'
+    description: 'Descripción'
+    person: 'Persona'
+    index:
+      title: 'Recomendaciones'
+      subtitle: 'Recomendaciones de Personas'
+      add: 'Nueva Recomendación'
+    new:
+      title: 'Nueva Recomendación'
+      subtitle: 'Crear nueva recomendación en la plataforma'
+    edit:
+      title: 'Editar Recomendación'
+      subtitle: ''
+    show:
+      title: ''
+      subtitle: ''

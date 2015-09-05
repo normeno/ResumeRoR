@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+  <%= link_to t('edit'), edit_recommendation_path(@recommendation), class: 'btn btn-default' %>
+  <%= link_to t('back'), recommendations_path, class: 'btn btn-default' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recommendation.name %>
-</p>
+<div class="box-body">
+  <% if(notice) %>
+    <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
+  <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recommendation.description %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @recommendation.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |
-<%= link_to 'Back', recommendations_path %>
+  <table class="table table-bordered">
+    <tr>
+      <td class="td_show_attribute"><%= t 'recommendations.name' %></td>
+      <td><%= @recommendation.name %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'recommendations.avatar' %></td>
+      <td><%= @recommendation.description.html_safe %></td>
+    </tr>
+    <tr>
+      <td class="td_show_attribute"><%= t 'recommendations.person' %></td>
+      <td><%= @recommendation.person_id %></td>
+    </tr>
+  </table>
+</div>
