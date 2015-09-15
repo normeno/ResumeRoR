@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+    <%= link_to t('edit'), edit_education_path(@education), class: 'btn btn-default' %>
+    <%= link_to t('back'), educations_path, class: 'btn btn-default' %>
+</div>
 
-<p>
-  <strong>Entity name:</strong>
-  <%= @education.entity_name %>
-</p>
-
-<p>
-  <strong>Career:</strong>
-  <%= @education.career %>
-</p>
-
-<p>
-  <strong>Start:</strong>
-  <%= @education.start %>
-</p>
-
-<p>
-  <strong>End:</strong>
-  <%= @education.end %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @education.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_education_path(@education) %> |
-<%= link_to 'Back', educations_path %>
+<div class="box-body">
+    <% if(notice) %>
+        <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
+    <% end %>
+    <table class="table table-bordered">
+        <tr>
+            <td class="td_show_attribute"><%= t 'education.entity_name' %></td>
+            <td><%= @education.entity_name %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'education.career' %></td>
+            <td><%= @education.career %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'education.start' %></td>
+            <td><%= @education.start %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'education.end' %></td>
+            <td><%= @education.end %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'education.person' %></td>
+            <td><%= @education.person_id %></td>
+        </tr>
+    </table>
+</div>

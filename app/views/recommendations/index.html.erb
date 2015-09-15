@@ -3,27 +3,6 @@
 </div>
 
 <div class="box-body">
-  <p id="notice"><%= notice %></p>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th><%= t 'recommendations.name' %></th>
-        <th><%= t 'recommendations.description' %></th>
-        <th><%= t 'ecommendations.person' %></th>
-        <th colspan="3" align="center"><%= t 'actions' %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recommendations.each do |recommendation| %>
-        <tr>
-          <td><%= recommendation.name %></td>
-          <td><%= recommendation.description.html_safe %></td>
-          <td><%= recommendation.person_id %></td>
-          <td><%= link_to t('show'), recommendation %></td>
-          <td><%= link_to t('edit'), edit_recommendation_path(recommendation) %></td>
-          <td><%= link_to t('destroy'), recommendation, method: :delete, data: { confirm: t('are_you_sure') } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <p id="notice"><%= notice %></p>
+    <%= render 'table_info' %>
 </div>

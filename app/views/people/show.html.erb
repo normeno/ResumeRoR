@@ -1,41 +1,91 @@
 <div class="box-header with-border">
-  <%= link_to t('edit'), edit_person_path(@person), class: 'btn btn-default' %>
-  <%= link_to t('back'), people_path, class: 'btn btn-default' %>
+    <%= link_to t('edit'), edit_person_path(@person), class: 'btn btn-default' %>
+    <%= link_to t('back'), people_path, class: 'btn btn-default' %>
 </div>
 
 <div class="box-body">
-  <% if(notice) %>
-    <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
-  <% end %>
 
-  <table class="table table-bordered">
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.name' %></td>
-      <td><%= @person.name %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.avatar' %></td>
-      <td><%= image_tag @person.avatar.url(:medium) %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.email' %></td>
-      <td><%= @person.email %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.degree' %></td>
-      <td><%= @person.degree %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.short_description' %></td>
-      <td><%= @person.short_description.html_safe %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.full_description' %></td>
-      <td><%= @person.full_description.html_safe %></td>
-    </tr>
-    <tr>
-      <td class="td_show_attribute"><%= t 'people.skill' %></td>
-      <td><%= @person.skill %></td>
-    </tr>
-  </table>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+            <a href="#" id="general_tab"><%= t '.general_tab' %></a>
+        </li>
+        <li role="presentation">
+            <a href="#" id="educations_tab"><%= t '.education_tab' %></a>
+        </li>
+        <li role="presentation">
+            <a href="#" id="courses_tab"><%= t '.course_tab' %></a>
+        </li>
+        <li role="presentation">
+            <a href="#" id="jobs_tab"><%= t '.job_tab' %></a>
+        </li>
+        <li role="presentation">
+            <a href="#" id="recommendations_tab"><%= t '.recommendation_tab' %></a>
+        </li>
+    </ul>
+
+    <% if(notice) %>
+        <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
+    <% end %>
+
+    <div id="general_div">
+        <table class="table table-bordered">
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.name' %></td>
+                <td><%= @person.name %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.avatar' %></td>
+                <td><%= image_tag @person.avatar.url(:medium) %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.email' %></td>
+                <td><%= @person.email %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.degree' %></td>
+                <td><%= @person.degree %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.short_description' %></td>
+                <td><%= @person.short_description.html_safe %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.full_description' %></td>
+                <td><%= @person.full_description.html_safe %></td>
+            </tr>
+            <tr>
+                <td class="td_show_attribute"><%= t 'people.skill' %></td>
+                <td><%= @person.skill %></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="educations_div"  style="display: none;">
+        <%= render :partial => '/educations/table_info' %>
+    </div>
+    <div id="courses_div"  style="display: none;">
+        <%= render :partial => '/courses/table_info' %>
+    </div>
+    <div id="jobs_div"  style="display: none;">
+        <%= render :partial => '/jobs/table_info' %>
+    </div>
+    <div id="recommendations_div" style="display: none;">
+        <%= render :partial => '/recommendations/table_info' %>
+    </div>
+
 </div>
+
+
+<script type="text/javascript">
+  // Change Selected Nav
+  $('.nav-tabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show');
+
+    this.id == 'general_tab' ? $('#general_div').show() : $('#general_div').hide();
+    this.id == 'educations_tab' ? $('#educations_div').show() : $('#educations_div').hide();
+    this.id == 'courses_tab' ? $('#courses_div').show() : $('#courses_div').hide();
+    this.id == 'jobs_tab' ? $('#jobs_div').show() : $('#jobs_div').hide();
+    this.id == 'recommendations_tab' ? $('#recommendations_div').show() : $('#recommendations_div').hide();
+  })
+</script>

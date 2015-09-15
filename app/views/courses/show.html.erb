@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="box-header with-border">
+    <%= link_to t('edit'), edit_course_path(@course), class: 'btn btn-default' %>
+    <%= link_to t('back'), courses_path, class: 'btn btn-default' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+<div class="box-body">
+    <% if(notice) %>
+        <div id="notice" class="alert alert-warning" role="alert"><%= notice %></div>
+    <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-
-<p>
-  <strong>Person:</strong>
-  <%= @course.person_id %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+    <table class="table table-bordered">
+        <tr>
+            <td class="td_show_attribute"><%= t 'courses.name' %></td>
+            <td><%= @course.name %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'courses.description' %></td>
+            <td><%= @course.description %></td>
+        </tr>
+        <tr>
+            <td class="td_show_attribute"><%= t 'courses.person' %></td>
+            <td><%= @course.person_id %></td>
+        </tr>
+    </table>
+</div>

@@ -1,29 +1,29 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<%= form_for(@course, builder: BootstrapFormBuilder) do |f| %>
+    <% if @course.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+            <ul>
+                <% @course.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-      <ul>
-      <% @course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <%= label(:name, t('courses.name') ) %>
+    <%= f.bootstrap_text_field :name %>
+
+    <%= label(:description, t('courses.description') ) %>
+    <%= f.bootstrap_text_field :description %>
+
+    <div class="form-group">
+        <%= f.label :person_id %>
+        <br>
+        <%= f.select :person_id, options_for_select(Person.all.map{|p|[p.name, p.id]}) %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :person_id %><br>
-    <%= f.number_field :person_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+        <%= f.submit :class => 'btn btn-default' %>
+        <%= link_to 'Atrás', educations_path, class: 'btn btn-default' %>
+    </div>
 <% end %>

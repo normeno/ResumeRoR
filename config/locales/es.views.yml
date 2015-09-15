@@ -1,106 +1,136 @@
 es:
-  main_navigation: 'Menú de Navegación'
-  online: 'En línea'
-  people_name: 'Personas'
-  person_name: 'Persona'
-  educations_name: 'Estudios'
-  education_name: 'Estudio'
-  jobs_name: 'Trabajos'
-  job_name: 'Trabajo'
-  recommendations_name: 'Recomendaciones'
-  recommendation_name: 'Recomendación'
-  profiles_name: 'Perfiles'
-  profil_name: 'Perfil'
-  courses_name: 'Cursos'
-  course_name: 'Curso'
-  sign_out: 'Salir'
-  admin: 'Administración'
-  home: 'Inicio'
-  actions: 'Acciones'
-  show: 'Mostrar'
-  edit: 'Editar'
-  destroy: 'Eliminar'
-  are_you_sure: '¿Estás Seguro?'
-  back: 'Atrás'
+    main_navigation: 'Menú de Navegación'
+    online: 'En línea'
+    people_name: 'Personas'
+    person_name: 'Persona'
+    educations_name: 'Estudios'
+    education_name: 'Estudio'
+    jobs_name: 'Trabajos'
+    job_name: 'Trabajo'
+    recommendations_name: 'Recomendaciones'
+    recommendation_name: 'Recomendación'
+    profiles_name: 'Perfiles'
+    profil_name: 'Perfil'
+    courses_name: 'Cursos'
+    course_name: 'Curso'
+    sign_out: 'Salir'
+    admin: 'Administración'
+    home: 'Inicio'
+    actions: 'Acciones'
+    show: 'Mostrar'
+    edit: 'Editar'
+    destroy: 'Eliminar'
+    are_you_sure: '¿Estás Seguro?'
+    back: 'Atrás'
 
-  courses:
-    index:
-      admin_to: 'Administración de Cursos'
-      add: 'Nuevo Curso'
+    courses:
+        name: 'Nombre'
+        description: 'Descripción'
+        person: 'Persona'
+        index:
+            title: 'Cursos'
+            subtitle: 'Administración de Cursos'
+            add: 'Nuevo Curso'
+        new:
+            title: 'Nuevo Curso'
+            subtitle: 'Crear nuevo curso en la plataforma'
+        edit:
+            title: 'Editar Curso'
+            subtitle: ''
 
-  people:
-    name: 'Nombre'
-    avatar: 'Avatar'
-    email: 'Email'
-    degree: 'Título'
-    short_description: 'Desc. Corta'
-    full_description: 'Desc. Larga'
-    skill: 'Skills'
-    resume_link: 'Link Resumen'
+    people:
+        name: 'Nombre'
+        avatar: 'Avatar'
+        email: 'Email'
+        degree: 'Título'
+        short_description: 'Desc. Corta'
+        full_description: 'Desc. Larga'
+        skill: 'Skills'
+        resume_link: 'Link Resumen'
+        updated: 'Persona modificada exitosamente.'
+        destroyed: 'Persona fue eliminada correctamente.'
+        index:
+            title: 'Personas'
+            subtitle: 'Administración de Personas'
+            add: 'Nueva Persona'
+        new:
+            title: 'Nueva Persona'
+            subtitle: 'Crear nueva persona en la plataforma'
+        edit:
+            title: 'Editar Persona'
+            subtitle: ''
+        show:
+            title: ''
+            subtitle: ''
+            general_tab: 'General'
+            education_tab: 'Estudios'
+            course_tab: 'Cursos'
+            job_tab: 'Trabajos'
+            recommendation_tab: 'Recomendaciones'
+
+    educations:
+        entity_name: 'Nombre de Entidad'
+        career: 'Carrera'
+        start: 'Inicio'
+        end: 'Término'
+        person: 'Persona'
+        index:
+            title: 'Estudios'
+            subtitle: 'Administración de Estudios'
+            add: 'Agregar Estudio'
+        new:
+            title: 'Nuevo Estudio'
+            subtitle: 'Agregar estudio a persona'
+        edit:
+            title: 'Editar Estudio'
+            subtitle: ''
+        show:
+            title: ''
+            subtitle: ''
+
+    jobs:
+        company_name: 'Empresa'
+        position: 'Cargo'
+        description: 'Descripción'
+        start: 'Inicio'
+        end: 'Fin'
+        person: 'Persona'
+        index:
+            title: 'Empleos'
+            subtitle: 'Administración de Empleos'
+            add: 'Agregar Empleo'
+        new:
+            title: 'Nuevo Empleo'
+            subtitle: 'Agregar empleo a persona'
+        edit:
+            title: 'Editar Empleo'
+            subtitle: ''
+        show:
+            title: ''
+            subtitle: ''
+
     index:
-      title: 'Personas'
-      subtitle: 'Administración de Personas'
-      add: 'Nueva Persona'
+        admin_to: 'Administración de Cursos'
+        add: 'Nuevo Trabajo'
+
     new:
-      title: 'Nueva Persona'
-      subtitle: 'Crear nueva persona en la plataforma'
-    edit:
-      title: 'Editar Persona'
-      subtitle: ''
-    show:
-      title: ''
-      subtitle: ''
+        title: 'Nuevo Trabajo'
+        subtitle: ''
 
-  educations:
-    entity_name: 'Nombre de Entidad'
-    career: 'Carrera'
-    start: 'Inicio'
-    end: 'Término'
-    person: 'Persona'
-    index:
-      title: 'Cursos'
-      subtitle: 'Administración de Estudios'
-      add: 'Agregar Estudio'
-    new:
-      title: 'Nuevo Estudio'
-      subtitle: 'Agregar estudio a persona'
-    edit:
-      title: 'Editar Curso'
-      subtitle: ''
-    show:
-      title: ''
-      subtitle: ''
-
-  jobs:
-    company_name: 'Empresa'
-    position: 'Cargo'
-    description: 'Descripción'
-    start: 'Inicio'
-    end: 'Fin'
-    person: 'Persona'
-
-    index:
-      admin_to: 'Administración de Cursos'
-      add: 'Nuevo Trabajo'
-
-    new:
-      title: 'Nuevo Trabajo'
-      subtitle: ''
-
-  recommendations:
-    name: 'Nombre'
-    description: 'Descripción'
-    person: 'Persona'
-    index:
-      title: 'Recomendaciones'
-      subtitle: 'Recomendaciones de Personas'
-      add: 'Nueva Recomendación'
-    new:
-      title: 'Nueva Recomendación'
-      subtitle: 'Crear nueva recomendación en la plataforma'
-    edit:
-      title: 'Editar Recomendación'
-      subtitle: ''
-    show:
-      title: ''
-      subtitle: ''
+    recommendations:
+        name: 'Nombre'
+        description: 'Descripción'
+        person: 'Persona'
+        index:
+            title: 'Recomendaciones'
+            subtitle: 'Recomendaciones de Personas'
+            add: 'Nueva Recomendación'
+        new:
+            title: 'Nueva Recomendación'
+            subtitle: 'Crear nueva recomendación en la plataforma'
+        edit:
+            title: 'Editar Recomendación'
+            subtitle: ''
+        show:
+            title: ''
+            subtitle: ''
