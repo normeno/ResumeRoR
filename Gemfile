@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #Mysql/MariaDB
-gem 'mysql2', '~> 0.3.18'
+gem 'mysql2'
 
 # Datepicker
 gem 'bootstrap-datepicker-rails'
