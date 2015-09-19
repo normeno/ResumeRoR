@@ -15,7 +15,7 @@
             <td><%= course.name %></td>
             <td><%= course.description %></td>
             <% if params[:controller] != 'people' %>
-            <td><%= course.person_id %></td>
+            <td><%= course.person.name %></td>
             <% end %>
             <td><%= link_to t('show'), course %></td>
             <td><%= link_to t('edit'), edit_course_path(course) %></td>

@@ -1,58 +1,57 @@
 <div class="box-body">
-    <%= form_for @job, builder: BootstrapFormBuilder do |f| %>
-        <% if @job.errors.any? %>
-            <div id="error_explanation">
-                <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+  <%= form_for @job, builder: BootstrapFormBuilder do |f| %>
+	<% if @job.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+		<h2><%= t(:error_count, count: @job.errors.count) %></h2>
+		<ul>
+		  <% @job.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		  <% end %>
+		</ul>
+	  </div>
+	<% end %>
 
-                <ul>
-                    <% @job.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
+	<%= label(:company_name, t('jobs.company_name') ) %>
+	<%= f.bootstrap_text_field :company_name %>
 
-        <%= label(:company_name, t('jobs.company_name') ) %>
-        <%= f.bootstrap_text_field :company_name %>
+	<%= label(:position, t('jobs.position') ) %>
+	<%= f.bootstrap_text_field :position %>
 
-        <%= label(:position, t('jobs.position') ) %>
-        <%= f.bootstrap_text_field :position %>
+	<%= label(:description, t('jobs.description') ) %><br>
+	<%= f.bootstrap_text_area :description %>
 
-        <%= label(:description, t('jobs.description') ) %><br>
-        <%= f.bootstrap_text_area :description %>
+	<%= label(:start, t('jobs.start') ) %>
+	<%= f.bootstrap_month_picker :start %>
 
-        <%= label(:start, t('jobs.start') ) %>
-        <%= f.bootstrap_month_picker :start %>
+	<%= label(:end, t('jobs.end') ) %>
+	<%= f.bootstrap_month_picker :end %>
 
-        <%= label(:end, t('jobs.end') ) %>
-        <%= f.bootstrap_month_picker :end %>
+	<%= check_box_tag 'actual' %> Actual
 
-        <%= check_box_tag 'actual' %> Actual
+	<div class="form-group">
+	  <%= label(:person_id, t('jobs.person') ) %><br>
+	  <%= f.collection_select :person_id, Person.all, :id, :name %>
+	</div>
 
-        <div class="form-group">
-            <%= label(:person_id, t('jobs.person') ) %><br>
-            <%= f.collection_select :person_id, Person.all, :id, :name %>
-        </div>
-
-        <div class="actions">
-            <%= f.submit %>
-        </div>
-    <% end %>
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
+  <% end %>
 </div>
 
-<script type="text/javascript">
-    $('#job_description').wysihtml5();
-</script>
+  <script type="text/javascript">
+	$('#job_description').wysihtml5();
+  </script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#actual').change(function(){
-            if(this.checked) {
-                $('#job_end').val('');
-                $('#job_end').prop('disabled', true);
-            } else {
-                $('#job_end').removeAttr('disabled');
-            }
-        });
-    });
+  $(document).ready(function(){
+	$('#actual').change(function(){
+	  if(this.checked) {
+		$('#job_end').val('');
+		$('#job_end').prop('disabled', true);
+	  } else {
+		$('#job_end').removeAttr('disabled');
+	  }
+	});
+  });
 </script>

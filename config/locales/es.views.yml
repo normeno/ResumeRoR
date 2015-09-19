@@ -22,6 +22,7 @@ es:
     destroy: 'Eliminar'
     are_you_sure: '¿Estás Seguro?'
     back: 'Atrás'
+    error_count: 'Han ocurrido %{count} errores'
 
     courses:
         name: 'Nombre'
@@ -43,8 +44,8 @@ es:
         avatar: 'Avatar'
         email: 'Email'
         degree: 'Título'
-        short_description: 'Desc. Corta'
-        full_description: 'Desc. Larga'
+        short_description: 'Descripción Corta'
+        full_description: 'Descripción Larga'
         skill: 'Skills'
         resume_link: 'Link Resumen'
         updated: 'Persona modificada exitosamente.'

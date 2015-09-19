@@ -15,7 +15,7 @@
             <td><%= recommendation.name %></td>
             <td><%= recommendation.description.html_safe %></td>
             <% if params[:controller] != 'people' %>
-            <td><%= recommendation.person_id %></td>
+            <td><%= recommendation.person.name %></td>
             <% end %>
             <td><%= link_to t('show'), recommendation %></td>
             <td><%= link_to t('edit'), edit_recommendation_path(recommendation) %></td>

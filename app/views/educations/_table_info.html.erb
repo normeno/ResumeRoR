@@ -19,7 +19,7 @@
             <td><%= education.start %></td>
             <td><%= education.end %></td>
             <% if params[:controller] != 'people' %>
-            <td><%= education.person_id %></td>
+            <td><%= education.person.name %></td>
             <% end %>
             <td><%= link_to t('show'), education %></td>
             <td><%= link_to t('edit'), edit_education_path(education) %></td>

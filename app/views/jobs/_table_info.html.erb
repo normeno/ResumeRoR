@@ -21,7 +21,7 @@
             <td><%= job.start %></td>
             <td><%= job.end %></td>
             <% if params[:controller] != 'people' %>
-            <td><%= job.person_id %></td>
+            <td><%= job.person.name %></td>
             <% end %>
             <td><%= link_to t('show'), job %></td>
             <td><%= link_to t('edit'), edit_job_path(job) %></td>
