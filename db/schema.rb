@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913225707) do
+ActiveRecord::Schema.define(version: 20150919214736) do
 
   create_table "courses", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.text     "description"
-    t.integer  "person_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name",        limit: 255,   null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "educations", force: :cascade do |t|
@@ -26,41 +25,38 @@ ActiveRecord::Schema.define(version: 20150913225707) do
     t.string   "career",      limit: 150, null: false
     t.date     "start",                   null: false
     t.date     "end"
-    t.integer  "person_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "company_name", limit: 100, null: false
-    t.string   "position",     limit: 45,  null: false
-    t.text     "description",              null: false
-    t.string   "start"
-    t.string   "end"
-    t.integer  "person_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "company_name", limit: 100,   null: false
+    t.string   "position",     limit: 45,    null: false
+    t.text     "description",  limit: 65535, null: false
+    t.string   "start",        limit: 255
+    t.string   "end",          limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.string   "name",              limit: 65,  null: false
-    t.text     "avatar",                        null: false
-    t.string   "email",             limit: 100, null: false
-    t.string   "degree",            limit: 65,  null: false
-    t.text     "short_description",             null: false
-    t.text     "full_description",              null: false
-    t.text     "resume_link",                   null: false
-    t.text     "skill",                         null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "name",              limit: 65,    null: false
+    t.text     "avatar",            limit: 65535, null: false
+    t.string   "email",             limit: 100,   null: false
+    t.string   "degree",            limit: 65,    null: false
+    t.text     "short_description", limit: 65535, null: false
+    t.text     "full_description",  limit: 65535, null: false
+    t.text     "resume_link",       limit: 65535, null: false
+    t.text     "skill",             limit: 65535, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.string   "name",        limit: 65, null: false
-    t.text     "description",            null: false
-    t.integer  "person_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 65,    null: false
+    t.text     "description", limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end
