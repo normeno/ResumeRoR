@@ -21,3 +21,6 @@
 /public/uploads/*
 
 .DS_store
+
+# Ignore IDE
+/.idea
