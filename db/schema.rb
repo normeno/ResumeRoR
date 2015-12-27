@@ -16,39 +16,31 @@ ActiveRecord::Schema.define(version: 20151227210428) do
   create_table "courses", force: :cascade do |t|
     t.string   "name",        limit: 255,   null: false
     t.text     "description", limit: 65535
+    t.integer  "person_id",   limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.integer  "person_id",   limit: 4
   end
-
-  add_index "courses", ["person_id"], name: "index_courses_on_person_id", using: :btree
 
   create_table "educations", force: :cascade do |t|
-    t.string   "entity_name",  limit: 100, null: false
-    t.string   "career",       limit: 150, null: false
-    t.date     "start",                    null: false
+    t.string   "entity_name", limit: 100, null: false
+    t.string   "career",      limit: 150, null: false
+    t.date     "start",                   null: false
     t.date     "end"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "person_id",    limit: 4
-    t.string   "entity_image", limit: 255
+    t.integer  "person_id",   limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
-
-  add_index "educations", ["person_id"], name: "index_educations_on_person_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "company_name",  limit: 100,   null: false
-    t.string   "position",      limit: 45,    null: false
-    t.text     "description",   limit: 65535, null: false
-    t.string   "start",         limit: 255
-    t.string   "end",           limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "person_id",     limit: 4
-    t.string   "company_image", limit: 255
+    t.string   "company_name", limit: 100,   null: false
+    t.string   "position",     limit: 45,    null: false
+    t.text     "description",  limit: 65535, null: false
+    t.string   "start",        limit: 255
+    t.string   "end",          limit: 255
+    t.integer  "person_id",    limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
-
-  add_index "jobs", ["person_id"], name: "index_jobs_on_person_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.string   "name",              limit: 65,    null: false
@@ -60,28 +52,22 @@ ActiveRecord::Schema.define(version: 20151227210428) do
     t.text     "resume_link",       limit: 65535, null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "username",          limit: 255
-    t.string   "password",          limit: 255
   end
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "name",        limit: 65,    null: false
     t.text     "description", limit: 65535, null: false
+    t.integer  "person_id",   limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.integer  "person_id",   limit: 4
   end
-
-  add_index "recommendations", ["person_id"], name: "index_recommendations_on_person_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
-    t.string  "name",      limit: 255
-    t.integer "year",      limit: 4
-    t.integer "person_id", limit: 4
+    t.string   "name",       limit: 255
+    t.integer  "year",       limit: 4
+    t.integer  "person_id",  limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_foreign_key "courses", "people"
-  add_foreign_key "educations", "people"
-  add_foreign_key "jobs", "people"
-  add_foreign_key "recommendations", "people"
 end

@@ -4,6 +4,8 @@ class CreateSkills < ActiveRecord::Migration
       t.string :name
       t.integer :year
       t.references :person
+
+      t.timestamps null: false
     end
   end
 end

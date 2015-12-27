@@ -6,7 +6,7 @@ class CreateJobs < ActiveRecord::Migration
       t.text :description, null: false
       t.date :start
       t.date :end
-      t.integer :person_id
+      t.references :person
 
       t.timestamps null: false
     end

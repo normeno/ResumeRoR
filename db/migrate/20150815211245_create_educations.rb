@@ -5,7 +5,7 @@ class CreateEducations < ActiveRecord::Migration
       t.string :career, null: false, :limit => 150
       t.date :start, null: false
       t.date :end
-      t.integer :person_id
+      t.references :person
 
       t.timestamps null: false
     end
