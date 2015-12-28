@@ -4,9 +4,9 @@ class CreateJobs < ActiveRecord::Migration
       t.string :company_name, null: false, :limit => 100
       t.string :position, null: false, :limit => 45
       t.text :description, null: false
-      t.date :start
-      t.date :end
-      t.references :person
+      t.string :start_at
+      t.string :end_at
+      t.references :person, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -16,14 +16,14 @@
     <%= label(:description, t('courses.description') ) %>
     <%= f.bootstrap_text_field :description %>
 
-    <div class="form-group">
+    <div class="form-group" style="display:none;">
         <%= f.label :person_id %>
-        <br>
-        <%= f.select :person_id, options_for_select(Person.all.map{|p|[p.name, p.id]}) %>
+        <%= f.bootstrap_text_field :person_id, :value => params[:id], :readonly => true %>
     </div>
 
     <div class="form-group">
-        <%= f.submit :class => 'btn btn-default' %>
+        <%= f.submit t('courses.new.add_and_next'), :name => 'commit_next', :class => 'btn btn-default' %>
+        <%= f.submit t('courses.new.add_and_other'), :name => 'commit_other', :class => 'btn btn-default' %>
         <%= link_to 'Atrás', educations_path, class: 'btn btn-default' %>
     </div>
 <% end %>

@@ -28,7 +28,13 @@ class EducationsController < ApplicationController
 
     respond_to do |format|
       if @education.save
-        format.html { redirect_to @education, notice: 'Education was successfully created.' }
+        if(params[:commit_next])
+          url_to = course_person_path(params[:education][:person_id])
+        else
+          url_to = education_person_path(params[:education][:person_id])
+        end
+
+        format.html { redirect_to url_to, notice: 'Education was successfully created.' }
         format.json { render :show, status: :created, location: @education }
       else
         format.html { render :new }
@@ -69,6 +75,6 @@ class EducationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_params
-      params.require(:education).permit(:entity_name, :career, :start, :end, :person_id)
+      params.require(:education).permit(:entity_name, :career, :start_at, :end_at, :person_id)
     end
 end

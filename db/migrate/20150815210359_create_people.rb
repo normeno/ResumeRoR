@@ -8,7 +8,6 @@ class CreatePeople < ActiveRecord::Migration
       t.text :short_description, null: false
       t.text :full_description, null: false
       t.text :resume_link, null: false
-      t.text :skill, null: false
 
       t.timestamps null: false
     end

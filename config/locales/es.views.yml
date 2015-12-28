@@ -35,6 +35,8 @@ es:
         new:
             title: 'Nuevo Curso'
             subtitle: 'Crear nuevo curso en la plataforma'
+            add_and_next: 'Guardar y continuar'
+            add_and_other: 'Guardar y agregar otro'
         edit:
             title: 'Editar Curso'
             subtitle: ''
@@ -82,6 +84,8 @@ es:
         new:
             title: 'Nuevo Estudio'
             subtitle: 'Agregar estudio a persona'
+            add_and_next: 'Guardar y continuar'
+            add_and_other: 'Guardar y agregar otro'
         edit:
             title: 'Editar Estudio'
             subtitle: ''
@@ -103,6 +107,8 @@ es:
         new:
             title: 'Nuevo Empleo'
             subtitle: 'Agregar empleo a persona'
+            add_and_next: 'Guardar y continuar'
+            add_and_other: 'Guardar y agregar otro'
         edit:
             title: 'Editar Empleo'
             subtitle: ''

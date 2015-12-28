@@ -20,22 +20,23 @@
 	<%= label(:description, t('jobs.description') ) %><br>
 	<%= f.bootstrap_text_area :description %>
 
-	<%= label(:start, t('jobs.start') ) %>
-	<%= f.bootstrap_month_picker :start %>
+	<%= label(:start_at, t('jobs.start') ) %>
+	<%= f.bootstrap_month_picker :start_at %>
 
-	<%= label(:end, t('jobs.end') ) %>
-	<%= f.bootstrap_month_picker :end %>
+	<%= label(:end_at, t('jobs.end') ) %>
+    <%= check_box_tag 'actual', false, false, style: "margin-left:10px;" %> Actual
+	<%= f.bootstrap_month_picker :end_at %>
 
-	<%= check_box_tag 'actual' %> Actual
-
-	<div class="form-group">
+	<div class="form-group" style="display:none;">
 	  <%= label(:person_id, t('jobs.person') ) %><br>
-	  <%= f.collection_select :person_id, Person.all, :id, :name %>
+	  <%= f.bootstrap_text_field :person_id, :value => params[:id], :readonly => true %>
 	</div>
 
-	<div class="actions">
-	  <%= f.submit %>
-	</div>
+    <div class="actions">
+        <%= f.submit t('jobs.new.add_and_next'), :name => 'commit_next', :class => 'btn btn-default' %>
+        <%= f.submit t('jobs.new.add_and_other'), :name => 'commit_other', :class => 'btn btn-default' %>
+        <%= link_to 'Atrás', educations_path, class: 'btn btn-default' %>
+    </div>
   <% end %>
 </div>
 
@@ -47,10 +48,10 @@
   $(document).ready(function(){
 	$('#actual').change(function(){
 	  if(this.checked) {
-		$('#job_end').val('');
-		$('#job_end').prop('disabled', true);
+		$('#job_end_at').val('');
+		$('#job_end_at').prop('disabled', true);
 	  } else {
-		$('#job_end').removeAttr('disabled');
+		$('#job_end_at').removeAttr('disabled');
 	  }
 	});
   });

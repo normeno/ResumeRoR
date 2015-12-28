@@ -3,9 +3,9 @@ class CreateEducations < ActiveRecord::Migration
     create_table :educations do |t|
       t.string :entity_name, null: false, :limit => 100
       t.string :career, null: false, :limit => 150
-      t.date :start, null: false
-      t.date :end
-      t.references :person
+      t.string :start_at, null: false
+      t.string :end_at
+      t.references :person, index: true, foreign_key: true
 
       t.timestamps null: false
     end

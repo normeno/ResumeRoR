@@ -28,7 +28,12 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        if(params[:commit_next])
+          url_to = job_person_path(params[:course][:person_id])
+        else
+          url_to = course_person_path(params[:course][:person_id])
+        end
+        format.html { redirect_to url_to, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
